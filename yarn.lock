@@ -18,6 +18,23 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@babel/runtime@^7.2.0":
+  version "7.3.1"
+  resolved "http://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
+  integrity sha1-V0sD6OipiY6vSocqkuogt4Rvbyo=
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
+"@types/anymatch@*":
+  version "1.3.1"
+  resolved "http://registry.npm.taobao.org/@types/anymatch/download/@types/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
+  integrity sha1-M2utwb7sudrMOL6izzKt9ieoQho=
+
+"@types/history@*":
+  version "4.7.2"
+  resolved "http://registry.npm.taobao.org/@types/history/download/@types/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
+  integrity sha1-DmcOolTVWSQbbus4lPh1SZHnMiA=
+
 "@types/jest@^23.3.12":
   version "23.3.12"
   resolved "http://registry.npm.taobao.org/@types/jest/download/@types/jest-23.3.12.tgz#7e0ced251fa94c3bc2d1023d4b84b2992fa06376"
@@ -27,6 +44,11 @@
   version "0.0.29"
   resolved "http://registry.npm.taobao.org/@types/json5/download/@types/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
+
+"@types/node@*":
+  version "11.9.3"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-11.9.3.tgz#14adbb5ab8cd563f549fbae8dbe92e0b7d6e76cc"
+  integrity sha1-FK27WrjNVj9Un7ro2+kuC31udsw=
 
 "@types/node@^10.12.18":
   version "10.12.18"
@@ -45,6 +67,14 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-loadable@^5.5.0":
+  version "5.5.0"
+  resolved "http://registry.npm.taobao.org/@types/react-loadable/download/@types/react-loadable-5.5.0.tgz#7a878408ad940250aeb91d77d2b54a18f3c7c946"
+  integrity sha1-eoeECK2UAlCuuR130rVKGPPHyUY=
+  dependencies:
+    "@types/react" "*"
+    "@types/webpack" "*"
+
 "@types/react-redux@^7.0.1":
   version "7.0.1"
   resolved "http://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.0.1.tgz#9dd2503be7a9861c5a092bf1c5050b7ade4dc62e"
@@ -53,6 +83,23 @@
     "@types/react" "*"
     redux "^4.0.0"
 
+"@types/react-router-dom@^4.3.1":
+  version "4.3.1"
+  resolved "http://registry.npm.taobao.org/@types/react-router-dom/download/@types/react-router-dom-4.3.1.tgz#71fe2918f8f60474a891520def40a63997dafe04"
+  integrity sha1-cf4pGPj2BHSokVIN70CmOZfa/gQ=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*":
+  version "4.4.4"
+  resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-4.4.4.tgz#4dbd5588ea6024e0c04519bd8aabe74c0a2b77e5"
+  integrity sha1-Tb1ViOpgJODARRm9iqvnTAord+U=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.7.18":
   version "16.7.18"
   resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.7.18.tgz#f4ce0d539a893dd61e36cd11ae3a5e54f5a48337"
@@ -60,6 +107,29 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/tapable@*":
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/@types/tapable/download/@types/tapable-1.0.4.tgz#b4ffc7dc97b498c969b360a41eee247f82616370"
+  integrity sha1-tP/H3Je0mMlps2CkHu4kf4JhY3A=
+
+"@types/uglify-js@*":
+  version "3.0.4"
+  resolved "http://registry.npm.taobao.org/@types/uglify-js/download/@types/uglify-js-3.0.4.tgz#96beae23df6f561862a830b4288a49e86baac082"
+  integrity sha1-lr6uI99vVhhiqDC0KIpJ6GuqwII=
+  dependencies:
+    source-map "^0.6.1"
+
+"@types/webpack@*":
+  version "4.4.24"
+  resolved "http://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.4.24.tgz#75bc301176066f566ec54151b6101c2b45abb8b2"
+  integrity sha1-dbwwEXYGb1ZuxUFRthAcK0WruLI=
+  dependencies:
+    "@types/anymatch" "*"
+    "@types/node" "*"
+    "@types/tapable" "*"
+    "@types/uglify-js" "*"
+    source-map "^0.6.0"
 
 abab@^1.0.3:
   version "1.0.4"
@@ -3622,6 +3692,13 @@ hoist-non-react-statics@^2.5.0:
   resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha1-xZA89AnA39kI84jmGdhrnBF0y0c=
 
+hoist-non-react-statics@^3.2.1:
+  version "3.3.0"
+  resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha1-sJF48BIhhPuVrPUl2q7LTY9FlYs=
+  dependencies:
+    react-is "^16.7.0"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -6484,6 +6561,15 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types@^15.5.0:
+  version "15.7.2"
+  resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
@@ -6702,10 +6788,34 @@ react-hot-loader@^4.6.3:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
+react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1:
+  version "16.8.1"
+  resolved "http://registry.npm.taobao.org/react-is/download/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
+  integrity sha1-qAFB4kbriUgk+08pAcDFDvMdTNs=
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "http://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
+
+react-loadable@^5.5.0:
+  version "5.5.0"
+  resolved "http://registry.npm.taobao.org/react-loadable/download/react-loadable-5.5.0.tgz#582251679d3da86c32aae2c8e689c59f1196d8c4"
+  integrity sha1-WCJRZ509qGwyquLI5onFnxGW2MQ=
+  dependencies:
+    prop-types "^15.5.0"
+
+react-redux@^6.0.0:
+  version "6.0.0"
+  resolved "http://registry.npm.taobao.org/react-redux/download/react-redux-6.0.0.tgz#09e86eeed5febb98e9442458ad2970c8f1a173ef"
+  integrity sha1-Cehu7tX+u5jpRCRYrSlwyPGhc+8=
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    hoist-non-react-statics "^3.2.1"
+    invariant "^2.2.4"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-is "^16.6.3"
 
 react-router-dom@^4.3.1:
   version "4.3.1"
@@ -6906,6 +7016,11 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
+
+regenerator-runtime@^0.12.0:
+  version "0.12.1"
+  resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+  integrity sha1-+hpxVEdkwDb4xJsToIsllMn4oN4=
 
 regenerator-transform@^0.10.0:
   version "0.10.1"
