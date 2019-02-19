@@ -1,1 +1,3 @@
-export  {default} from '../components/songs/Songs';
+import Songs from '../components/songs/Songs';
+
+const SongsContainer = (props) => <Songs {...props}/>

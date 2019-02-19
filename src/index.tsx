@@ -7,7 +7,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Route from './router/';
 import configureStore from './store/';
-
+import './styles/main.scss';
 
 const render = (Component:any) => {
   ReactDOM.render(

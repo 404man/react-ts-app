@@ -1,13 +1,14 @@
-import { SONGS_PATH } from 'constants/RouterConstants';
+// import { SONGS_PATH } from 'constants/RouterConstants';
+
 import * as React from 'react';
+import 'components/nav/NavSearch.scss';
 // import { history } from 'react-router-dom'
 
+// interface IProps {
+//   history:any
+// }
 
-interface IProps {
-  history:any
-}
-
-class NavSearch extends React.Component<IProps>{
+class NavSearch extends React.Component{
   public input:any;
   public onKeyDown = (e:any) => {
     if(e.keyCode === 191){
@@ -22,7 +23,7 @@ class NavSearch extends React.Component<IProps>{
     if(e.charCode === 13){
       const value = e.currentTarget.value.trim();
       if(value !== ''){
-        this.props.history.push(SONGS_PATH);
+        // this.props.history.push(SONGS_PATH);
       }
     }
   }

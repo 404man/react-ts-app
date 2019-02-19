@@ -1,0 +1,16 @@
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+
+  @include mobile {
+    width: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.songs-body-card{
+  position: relative;
+  width:218px;
+  background-color: #fff;
+  border: 1px solid $lighterGray;
+}
+
+.songs-body-card_inner{
+  position: relative;
+  padding: 10px;
+  z-index: 0;
+}
+.songs-body-card_artwork{
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.songs-body-card_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.songs-body-card_avatar{
+  width: 24px;
+  height:24px;
+  margin-right: 10px;
+  background: no-repeat center center;
+  border-radius: 50%;
+}
+
+.songs-body-card_details{
+  flex:1;
+  overflow: hidden;
+}
+.songs-body-card_title{
+  display: block;
+  color:#222;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.songs-body-card_username{
+  display: block;
+  margin-right: 30px;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include mobile{
+    color: $gray;
+  }
+}

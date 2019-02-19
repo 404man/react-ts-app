@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.nav{
+  height: 50px;
+  background-color: $darkerGray;
+  @include mobile{
+    position: relative;
+    padding: 0 10px;
+    z-index: 5;
+  }
+}
+
+.nav_inner{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.nav_section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+
+  & + .nav_section{
+    margin-left: 30px;
+  }
+}
+
+.nav_logo_icon{
+  color: $white;
+  font-size: 20px;
+}
+.nav_logo_text{
+  margin-left:30px;
+  color:$white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  &:hover{
+    text-decoration: none;
+  }
+}
