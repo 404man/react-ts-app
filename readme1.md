@@ -5,6 +5,8 @@ js 路由跳转
 create-react-app myapp --scripts-version=react-scripts-ts@4.0.8 才支持scss
 
 scss 减号要空格 否则是负号；
+
+
 ***********************************************
 {
   "id": "123",
@@ -77,3 +79,8 @@ class App extends Component<IProps, IState> {
 需要特别强调的是，如果用到了state，除了在声明组件时通过泛型参数传递其state结构，还需要在初始化state时声明为 readonly
 
 ***************************
+设置默认值
+public static defaultProps: Partial<Persion> = {
+  name: "liu"
+}
+******************

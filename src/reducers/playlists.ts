@@ -24,6 +24,7 @@ const playlist = (state:any=initialState, action:playlistAction) => {
         items: [...state.items, ...action.items],
         nextUrl: action.nextUrl
       }
+    default: return state;
   }
 }
 
@@ -35,5 +36,6 @@ export default function playlists(state:any ={}, action:playlistAction){
         ...state,
         [action.playlist]: playlist(state[action.playlist], action),
       }
+    default: return state;
   }
 }

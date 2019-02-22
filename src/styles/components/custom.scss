@@ -14,3 +14,25 @@ a {
     width: 100%;
   }
 }
+
+.row{
+  display: flex;
+  flex-direction: row;
+  @include mobile{
+    display: block;
+  }
+  & + .row{
+    margin-top: 20px;
+    @include mobile{
+      margin-top: 0;
+    }
+  }
+}
+.row_cell{
+  & + .row_cell{
+    margin-left: 20px;
+    @include mobile{
+      margin:0;
+    }
+  }
+}
