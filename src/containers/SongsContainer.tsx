@@ -10,8 +10,11 @@ import getPlaylistData from 'selectors/SongsSelectors';
 // const SongsContainer = (props:ISongs) => <Songs {...props}/>;
 
 const mapStateToProps = (state:any) => {
+  const {environment} = state;
+  const {height} = environment;
   return {
     ...getPlaylistData(state),
+    height
   }
 }
 

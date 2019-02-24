@@ -10,6 +10,7 @@ export interface ISongs {
   songs: object[];
   playlistUrl: string;
   playlistNextUrl:null;
+  height:number;
 }
 class Songs extends React.Component<ISongs>{
   public componentWillMount(){
@@ -20,7 +21,8 @@ class Songs extends React.Component<ISongs>{
   public render(){
     const {
       playlist,
-      songs
+      songs,
+      height,
     } = this.props;
     return (
       <div>
@@ -29,6 +31,7 @@ class Songs extends React.Component<ISongs>{
           <SongsBody
             songs={songs}
             playlist={playlist}
+            height={height}
           />
         </div>
       </div>
