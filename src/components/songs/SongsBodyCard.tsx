@@ -3,13 +3,26 @@ import {Link} from 'react-router-dom';
 import 'components/songs/SongsBodyCard.scss';
 import getImageUrl from 'utils/ImageUtils';
 import IMAGE_SIZES from 'constants/ImageConstants';
+import ArtworkPlay from 'components/ArtworkPlay';
+import { TPlaySong } from 'actions/PlayerActions';
 
-export interface IProps{
-  song:any
+export interface ISongsBodyCard{
+  index:number;
+  song:any;
   playlist: string;
+  isPlaying: boolean;
+  isActive: boolean;
+  playSong: TPlaySong;
 }
 
-export default function SongsBodyCard ({song}:IProps) {
+export default function SongsBodyCard ({
+  song,
+  index,
+  playSong,
+  isActive,
+  isPlaying,
+  playlist,
+}:ISongsBodyCard) {
   const {artworkUrl,title, user} = song;
   const {avatarUrl, username} = user;
   return (
@@ -18,7 +31,13 @@ export default function SongsBodyCard ({song}:IProps) {
         <div className="songs-body-card_artwork"
           style={{backgroundImage:`url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`}}
         >
-          {0.1+ 0.2 === 0.3 ? '' : 'ArtworkPlay'}
+          <ArtworkPlay
+            index={index}
+            isActive={isActive}
+            isPlaying={isPlaying}
+            playlist={playlist}
+            playSong={playSong}
+          />
         </div>
         <div className="songs-body-card_main">
           <div className="songs-body-card_avatar" 

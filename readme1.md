@@ -84,3 +84,6 @@ public static defaultProps: Partial<Persion> = {
   name: "liu"
 }
 ******************
+ reselect   可以多层嵌套 取值，最后只需要传入一个state
+  createSelector () 生成一个函数，调用时传入state
+********************************************

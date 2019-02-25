@@ -1,13 +1,16 @@
 import * as React from 'react';
+import 'components/ArtworkPlay.scss';
+import { TPlaySong } from 'actions/PlayerActions';
 
-export interface IArtworkPlay{
+export interface IArtworkPlay {
   index: number;
   playlist: string;
   isPlaying: boolean;
   isActive:boolean;
-  playSong: (playlist:string, index:number) => void;
+  playSong: TPlaySong;
 }
-class ArtworkPlay extends React.Component<IArtworkPlay>{
+
+class ArtworkPlay extends React.Component<IArtworkPlay> {
   
   public playSong = () => {
     const {index, playlist, playSong} = this.props;

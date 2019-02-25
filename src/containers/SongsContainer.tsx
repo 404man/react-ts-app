@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // import { withRouter } from 'react-router'
 import {fetchSongsIfNeeded} from 'actions/PlaylistActions';
 import getPlaylistData from 'selectors/SongsSelectors';
-
+import {playSong} from 'actions/PlayerActions';
 
 // const SongsContainer = (props:ISongs) => <Songs {...props}/>;
 
@@ -20,5 +20,7 @@ const mapStateToProps = (state:any) => {
 
 export default connect(mapStateToProps, {
   fetchSongsIfNeeded,
+  playSong
+
 })(Songs);
 

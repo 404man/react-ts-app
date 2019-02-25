@@ -1,5 +1,6 @@
 import * as React from 'react';
 import NavContainer from 'containers/NavContainer'; 
+import PlayerContainer from 'containers/PlayerContainer';
 
 interface IApp{
   initEnvironment: () => void;
@@ -15,6 +16,7 @@ export  default class App extends React.Component<IApp> {
       <div className="App">
        <NavContainer />
       {this.props.children}
+      <PlayerContainer />
       </div>
     );
   }

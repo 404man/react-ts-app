@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SongsHeader from 'components/songs/SongsHeader';
 import SongsBody from 'components/songs/SongsBody';
-
+import { TPlaySong } from 'actions/PlayerActions';
 
 export interface ISongs {
   fetchSongsIfNeeded:(playlist:string, playlistUrl:string)=>void;
@@ -11,6 +11,9 @@ export interface ISongs {
   playlistUrl: string;
   playlistNextUrl:null;
   height:number;
+  isPlaying: boolean;
+  playSong: TPlaySong;
+  playingSongId: number;
 }
 class Songs extends React.Component<ISongs>{
   public componentWillMount(){
@@ -23,6 +26,9 @@ class Songs extends React.Component<ISongs>{
       playlist,
       songs,
       height,
+      isPlaying,
+      playSong,
+      playingSongId,
     } = this.props;
     return (
       <div>
@@ -32,6 +38,9 @@ class Songs extends React.Component<ISongs>{
             songs={songs}
             playlist={playlist}
             height={height}
+            isPlaying={isPlaying}
+            playSong={playSong}
+            playingSongId={playingSongId}
           />
         </div>
       </div>

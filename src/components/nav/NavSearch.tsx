@@ -9,7 +9,7 @@ import 'components/nav/NavSearch.scss';
 // }
 
 class NavSearch extends React.Component{
-  public input:any;
+  public input:HTMLInputElement;
   public onKeyDown = (e:any) => {
     if(e.keyCode === 191){
       const insideInput = e.target.tagName.toLowerCase().match(/input|textarea/);
@@ -39,7 +39,7 @@ class NavSearch extends React.Component{
       <div className="nav-search">
         <i className="nav-search_icon icon-search"/>
         <input 
-          ref={(node) => {this.input = node}}
+          ref={(node:HTMLInputElement) => {this.input = node}}
           className="nav-search_input"
           placeholder="SEARCH"
           onKeyPress={this.onKeyPress}
