@@ -43,8 +43,8 @@ export const fetchSongs = (playlist:string, url:string) => async (dispatch:any) 
   const songs = collection
     .map((song:any) => song.origin || song )
     .filter((song:any) => song.kind === 'track' && song.streamable);
-  const nextUrl = json.nextUrl || null;
-  const futureUrl = json.futureUrl || null;
+  const nextUrl = json.nextHref || null;
+  const futureUrl = json.futureHref || null;
 
   const {result, entities} = normalize(songs, [songSchema]);
   dispatch(fetchSongsSuccess(playlist, result, entities, nextUrl, futureUrl));
@@ -63,4 +63,18 @@ export const fetchSongsIfNeeded = (playlist:string, playlistUrl:string) => (disp
   if(shouldFetchSongs){
     dispatch(fetchSongs(playlist, playlistUrl));
   }
+}
+
+export const fetchSongsNext = (playlist:string, playlistNextUrl:string) => (dispatch: any, getState:any) => {
+  const state = getState();
+  const playlists = getPlaylists(state);
+  const playlistExits = playlist in playlists;
+  const playlistIsFetching = playlistExits ? playlists[playlist].isFetching: false;
+  
+  const shouldFetchSongsNext = (playlistExits && !playlistIsFetching && playlistNextUrl);
+
+  if(shouldFetchSongsNext){
+    dispatch(fetchSongs(playlist, playlistNextUrl));
+  }
+
 }

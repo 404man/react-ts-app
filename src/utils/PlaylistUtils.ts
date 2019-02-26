@@ -21,6 +21,16 @@ const playlistSongs = (playlist:string, playlists:any, entities:any) => (playlis
   : []
 );
 
+const playlistNextUrl = (
+  playlist:string,
+  playlists:any,
+  oauthToken?:any,
+) => (playlist in playlists && playlists[playlist].nextUrl 
+  ? `${playlists[playlist].nextUrl}${oauthToken ? `&oauth_token=${oauthToken}`
+  : ''}` 
+  : null
+);
+
 export const playlistData = (
   genre:string,
   time: string,
@@ -32,7 +42,7 @@ export const playlistData = (
     isFetching: isFetching(playlist, playlists),
     playlist,
     playlistUrl: genrePlaylistUrl(genre, time),
-    playlistNextUrl: null,
+    playlistNextUrl: playlistNextUrl(playlist, playlists),
     songs: playlistSongs(playlist, playlists, entities),
   }
 }

@@ -88,3 +88,8 @@ public static defaultProps: Partial<Persion> = {
  reselect   可以多层嵌套 取值，最后只需要传入一个state
   createSelector () 生成一个函数，调用时传入state
 ********************************************
+要点：
+按需加载 songs infiniteScroll > 200
+songsBodyRender 底部要多留几行大于200 再 padding-bottom 
+
+********************************
