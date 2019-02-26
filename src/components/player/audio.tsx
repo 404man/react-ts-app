@@ -42,7 +42,7 @@ const audio = (InnerComponent:any) => {
       const {onLoadStart} = this.props;
       onLoadStart();
     }
-    public onLoadedMetadata(){
+    public onLoadedMetadata = () => {
       const {audioElement, props} = this;
       const {onLoadedMetadata} = props;
       onLoadedMetadata(Math.floor(audioElement.duration));
@@ -62,7 +62,12 @@ const audio = (InnerComponent:any) => {
       const {onPause} = this.props;
       onPause();
     }
-
+    public onVolumeChange = () => {
+      const {audioElement, props} = this;
+      const {muted, volume} = audioElement;
+      const {onVolumeChange} = props;
+      onVolumeChange(muted, volume);
+    }
     public onTimeUpdate = () => {
       const {audioElement, props} = this;
       const {onTimeUpdate} = props;
@@ -72,21 +77,49 @@ const audio = (InnerComponent:any) => {
     public changeCurrentTime:IChangeCurrentTime = (currentTime) =>{
       this.audioElement.currentTime = currentTime;
     }
+    public changeVolume = (volume:number) => {
+      const {audioElement} = this;
+      audioElement.muted = false;
+      audioElement.volume = volume;
+    }
 
+    public toggleMuted = () => {
+      const {audioElement} = this;
+      const {muted} = audioElement;
+      audioElement.muted = !muted;
+    }
+    public togglePlay = () => {
+      const { audioElement} = this;
+      if(audioElement.paused){
+        audioElement.play();
+      }else{
+        audioElement.pause();
+      }
+    }
     public render(){
       const {audioUrl} = this.props;
       return (
         <div>
           <audio
             id="audio"
+            onLoadedMetadata={this.onLoadedMetadata}
             onLoadStart={this.onLoadStart}
+            onVolumeChange={this.onVolumeChange}
             onPlay={this.onPlay}
             onPause={this.onPause}
             onEnded={this.onEnded}
+            onTimeUpdate={this.onTimeUpdate}
             ref={(node:HTMLAudioElement) => {this.audioElement = node;}}
             src={audioUrl}
           />
-          <InnerComponent/>
+          <InnerComponent
+            {...this.state}
+            {...this.props}
+            changeCurrentTime={this.changeCurrentTime}
+            changeVolume={this.changeVolume}
+            togglePlay={this.togglePlay}
+            toggleMuted={this.toggleMuted}
+          />
         </div>
       )
     }

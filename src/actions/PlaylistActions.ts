@@ -40,7 +40,7 @@ export const fetchSongs = (playlist:string, url:string) => async (dispatch:any) 
   dispatch(fetchSongsRequest(playlist));
   const {json} = await callApi(url);
   const collection = json.collection || json;
-  const songs =collection
+  const songs = collection
     .map((song:any) => song.origin || song )
     .filter((song:any) => song.kind === 'track' && song.streamable);
   const nextUrl = json.nextUrl || null;

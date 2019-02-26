@@ -1,0 +1,129 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.player{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width: 100%;
+  height: 48px;
+  background-color: $white;
+  border-top: 1px solid $lighterGray;
+  user-select: none;
+  z-index: 999;
+
+}
+
+.player_inner{
+  display:flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.player_section{
+  display: flex;
+  align-items: center;
+  height:100%;
+  & + .player_section{
+    margin-left: 40px;
+  }
+}
+.player_section-song{
+  width: 200px;
+}
+
+.player_section-seek{
+  flex: 1;
+}
+.player_section-time{
+
+}
+.player_section-volume{
+  width: 100px;
+}
+.player_song{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.player_song_artwork{
+  flex-shrink:0;
+  width: 30px;
+  height: 30px;
+  background: no-repeat center center;
+  background-size: cover;
+}
+
+.player_song_main{
+  flex: 1;
+  margin-left: 8px;
+  overflow: hidden;
+}
+
+.player_song_title{
+  color: $black;
+  
+  @include mobile{
+    color: $white;
+  }
+}
+.player_song_username{
+  color: $blue;
+}
+
+.player_song_title,
+.player_song_username{
+  display: block;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+  @include mobile{
+    color: $white;
+  }
+}
+
+.player_buttons{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.player_button{
+  position: relative;
+  padding: 4px;
+  outline: 0;
+  & + .player_button{
+    margin-left: 30px;
+  }
+  &:hover{
+    cursor: pointer;
+    .player_button_icon{
+      color: $darkGray;
+    }
+  }
+
+  &:active{
+    .player_button_icon{
+      color: $darkGray;
+    }
+  }
+}
+.player_button_icon{
+  position: relative;
+  color:$gray;
+  z-index: 1;
+}
+
+.player_time{
+  display: flex;
+  flex-direction: row;
+  color: $gray;
+  font-size: 11px;
+}
+.player_time_separator{
+  margin: 0 10px;
+}

@@ -5,6 +5,7 @@ const initialState = {
   duration:0,
   isPlaying: false,
   volume: 1,
+  muted: false,
   playlist:null,
   playingIndex: null
 }
@@ -32,6 +33,23 @@ const player = (state:any=initialState, actions:any) => {
         ...state,
         playingIndex: actions.playingIndex,
         playlist: actions.playlist,
+      }
+    case constants.ON_LOAD_METADATA:
+      return {
+        ...state,
+        duration: actions.duration,
+      }
+    case constants.ON_TIME_UPDATE:
+      return {
+        ...state,
+        currentTime: actions.currentTime,
+      }
+
+    case constants.ON_VOLUME_CHANGE:
+      return {
+        ...state,
+        muted: actions.muted,
+        volume: actions.volume,
       }
     default: 
       return state;

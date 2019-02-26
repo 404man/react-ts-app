@@ -1,0 +1,36 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.slider{
+  display: flex;
+  padding: 8px 0;
+  align-items: center;
+  width:100%;
+  outline: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.slider_bar{
+  background-color: #ddd;
+  height: 2px;
+  width: 100%;
+}
+
+.slider_bar_fill{
+  position: relative;
+  height:2px;
+  background-color: $green;
+}
+.slider_hander{
+  position: absolute;
+  right: -6px;
+  top: -5px;
+  width: 12px;
+  height: 12px;
+  background-color: $white;
+  border: 1px solid $lighterGray;
+  outline: 0;
+  border-radius: 50%;
+}
