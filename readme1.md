@@ -93,3 +93,5 @@ public static defaultProps: Partial<Persion> = {
 songsBodyRender 底部要多留几行大于200 再 padding-bottom 
 
 ********************************
+热更新两处设置 index.tsx reduces.ts 加入 moudle.hot
+***************************

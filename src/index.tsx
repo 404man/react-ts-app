@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // import App from './App';
-import { AppContainer } from 'react-hot-loader';
 import {Provider} from 'react-redux';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
@@ -11,13 +10,20 @@ import './styles/main.scss';
 
 const render = (Component:any) => {
   ReactDOM.render(
-    <AppContainer>
       <Provider store={configureStore()}>
         <Component />
-      </Provider>
-    </AppContainer>,
+      </Provider>,
     document.getElementById('root') as HTMLElement
   );
 }
 render(Route);
 registerServiceWorker();
+
+// typescript need declare module with @types/webpack-env 
+
+if (module.hot) {
+  module.hot.accept('./router/index', () => {
+    const NextApp = require('./router/index').default;
+    render(NextApp);
+  });
+}

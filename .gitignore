@@ -20,3 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 src/selectors/SongsSelectors.ts
+
+#custom
+readme1.md

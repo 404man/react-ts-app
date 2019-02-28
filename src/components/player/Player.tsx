@@ -52,7 +52,7 @@ const Player = ({
               role="button"
               tabIndex={0}
             >
-              <i className="player_button_icon ion-ios-rewind"> &lt;&lt; </i>
+              <i className="player_button_icon ion ion-ios-rewind" />
             </div>
             <div 
               className="player_button"
@@ -60,14 +60,14 @@ const Player = ({
               role="button"
               tabIndex={0}
             >
-              <i className={`player_button_icon ion-ios-${isPlaying? 'pause': 'play'}`}>^</i>
+              <i className={`player_button_icon ion ion-ios-${isPlaying? 'pause': 'play'}`}/>
             </div>
             <div
               className="player_button"
               role="button"
               tabIndex={0}
             >
-              <i className="player_button_icon">&gt;&gt;</i>
+              <i className="player_button_icon ion ion-ios-fastforward"/>
             </div>
           </div>
         </div>
