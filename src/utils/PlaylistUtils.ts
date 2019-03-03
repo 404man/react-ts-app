@@ -12,8 +12,8 @@ const isFetching = (playlist:string, playlists:any) => (playlist in playlists
   : false
 );
 const genrePlaylistUrl = (genre:string, time:string) => {
-  const genreUriSegment = `$tags=${GENRE_QUERY_MAP[genre] || genre}`;
-  const timeUriSegment = time ? `&created_at[from]=${moment().subtract(Number(time), 'days').format('YYYY-MM-DD%2012:00:00')}` : 0;
+  const genreUriSegment = `&tags=${GENRE_QUERY_MAP[genre] || genre}`;
+  const timeUriSegment = time ? `&created_at[from]=${moment().subtract(Number(time), 'days').format('YYYY-MM-DD%2012:00:00')}` : '';
   return `${SONGS_URL}${timeUriSegment}${genreUriSegment}`;
 }
 const playlistSongs = (playlist:string, playlists:any, entities:any) => (playlist in playlists ?

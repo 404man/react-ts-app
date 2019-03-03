@@ -12,7 +12,7 @@ export interface ISongsBodyRendered {
   playingSongId: number;
 }
 
-const SongsBody: React.FC<ISongsBodyRendered> = ({
+const SongsBodyRendered: React.FC<ISongsBodyRendered> = ({
   songs,
   playlist, 
   start, 
@@ -55,4 +55,4 @@ const SongsBody: React.FC<ISongsBodyRendered> = ({
   return <>{rows}</>
 }
 
-export default SongsBody;
+export default SongsBodyRendered;

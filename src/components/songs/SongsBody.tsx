@@ -2,6 +2,8 @@ import * as React from 'react';
 import SongsBodyRendered  from 'components/songs/SongsBodyRendered';
 import scrollState from 'utils/scrollUtils';
 import { TPlaySong } from 'actions/PlayerActions';
+import Loader from 'components/loader/Loader';
+import './SongsBody.scss';
 
 export interface ISongsBody {
   playlist: string;
@@ -10,9 +12,10 @@ export interface ISongsBody {
   isPlaying: boolean;
   playSong: TPlaySong;
   playingSongId: number;
+  isFetching:boolean;
 }
 
-export default class SongBody extends React.Component<ISongsBody>{
+export default class SongsBody extends React.Component<ISongsBody>{
 
   public state = scrollState(this.props.height, this.props.songs.length, false);
 
@@ -34,7 +37,7 @@ export default class SongBody extends React.Component<ISongsBody>{
     this.setState(scrollState(height, songs.length));
   }
   public render(){
-    const {playlist, songs, isPlaying, playSong, playingSongId} = this.props;
+    const {playlist, songs, isPlaying, playSong, playingSongId,isFetching} = this.props;
     const {paddingTop, paddingBottom, start, end} = this.state;
     return (
       <div className="songs-body">
@@ -49,6 +52,7 @@ export default class SongBody extends React.Component<ISongsBody>{
           playingSongId={playingSongId}
         />
         <div className="songs-body_padder" style={{height:`${paddingBottom}px`}} />
+        <Loader className="loader-full" isLoading={isFetching} />
       </div>
     )
   }

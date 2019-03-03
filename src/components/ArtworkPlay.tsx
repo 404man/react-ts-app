@@ -35,7 +35,7 @@ class ArtworkPlay extends React.Component<IArtworkPlay> {
         tabIndex={0}
         onClick={isActive ? this.togglePlay : this.playSong}
       >
-        <i className={`artwork-play_icon icon-${isActive && isPlaying? 'radio-waves': 'ios-play'}`} />
+        <i className={`artwork-play_icon ion ion-${isActive && isPlaying? 'radio-waves': 'ios-play'}`} />
       </div>
     )
   }

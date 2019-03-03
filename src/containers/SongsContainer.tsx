@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import {fetchSongsIfNeeded, fetchSongsNext} from 'actions/PlaylistActions';
 import getPlaylistData from 'selectors/SongsSelectors';
 import {playSong} from 'actions/PlayerActions';
+import { getPlayingSongId, getIsPlaying } from 'selectors/CommonSelectors';
 
 // const SongsContainer = (props:ISongs) => <Songs {...props}/>;
 
@@ -15,6 +16,8 @@ const mapStateToProps = (state:any) => {
   return {
     ...getPlaylistData(state),
     height,
+    playingSongId: getPlayingSongId(state),
+    isPlaying: getIsPlaying(state),
   }
 }
 

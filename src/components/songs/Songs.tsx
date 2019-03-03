@@ -34,6 +34,7 @@ class Songs extends React.Component<ISongs>{
       playSong,
       playingSongId,
       playlistNextUrl,
+      isFetching,
     } = this.props;
     return (
       <InfiniteScroll args={[playlist, playlistNextUrl]} onScroll={fetchSongsNext}>
@@ -46,6 +47,7 @@ class Songs extends React.Component<ISongs>{
             isPlaying={isPlaying}
             playSong={playSong}
             playingSongId={playingSongId}
+            isFetching={isFetching}
           />
         </div>
       </InfiniteScroll>
